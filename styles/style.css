@@ -142,7 +142,7 @@ header {
   }
 }
 
-.close-button {
+.mobile-nav .close-button {
   display: inline;
   align-self: end;
   font-size: 1.4rem;
