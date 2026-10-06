@@ -1,4 +1,4 @@
-const CACHE_NAME = "Talento";
+/*const CACHE_NAME = "Talento";
 
 const FILES_TO_CACHE = [
   "/",
@@ -21,4 +21,4 @@ self.addEventListener("fetch", (event) => {
       return response || fetch(event.request);
     }),
   );
-});
+}); */

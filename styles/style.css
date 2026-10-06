@@ -55,11 +55,25 @@ a {
 }
 
 .btn-style {
-  font-size: 0.7rem;
+  font-size: 1rem;
   background-color: var(--second-color);
   color: white;
-  padding: 0.4em 1em;
-  border-radius: 25px;
+  padding: 0.5em 1em;
+  border-radius: 15px;
+  display: flex;
+  justify-self: start;
+  gap: 0.2rem;
+  align-items: center;
+  transition: 0.2s;
+}
+
+.btn-style i {
+  font-size: 0.7rem;
+}
+
+.btn-style:hover {
+  gap: 0.5rem;
+  opacity: 0.8;
 }
 
 .play-button {
@@ -69,6 +83,20 @@ a {
   border-radius: 1.5rem;
   color: var(--second-color);
   z-index: 3;
+}
+
+h2 {
+  font-size: 1.4rem;
+  padding-block-end: 0.5em;
+}
+
+p,
+a {
+  font-size: 1rem;
+}
+
+.break {
+  display: none;
 }
 
 /* Header */
@@ -157,7 +185,7 @@ header {
   background-color: rgba(24, 194, 24, 0.226);
   border-radius: 15px;
   padding: 1em;
-  font-size: 1.2rem;
+  font-size: 1rem;
 }
 
 /* Hero Section */
@@ -166,8 +194,9 @@ header {
   position: relative;
   background-size: cover;
   padding-inline: 2em;
-  padding-block: 8em 3em;
+  padding-block-start: 12em;
   color: white;
+  height: 80vh;
 }
 
 .hero-section::before {
@@ -178,19 +207,21 @@ header {
   inset: 0;
 }
 
-.hero-section a,
-.hero-section i {
-  font-size: 0.8rem;
-}
-
 .hero-section h1 {
-  font-size: 1.6rem;
-  padding-block-start: 0.6em;
+  font-size: 1.8rem;
 }
 
 .hero-div {
   position: relative;
   z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 1rem;
+}
+
+.hero-div p {
+  padding-block-end: 4em;
 }
 
 /* Past Event Section */
@@ -203,11 +234,6 @@ header {
   text-align: center;
 }
 
-.event-header h2 {
-  font-size: 1.1rem;
-  padding-block: 0.5em 1em;
-}
-
 .video-card-div {
   display: grid;
   grid-template-columns: 1fr;
@@ -216,13 +242,11 @@ header {
 }
 
 .video-card-div h3 {
-  font-size: 1rem;
   position: relative;
   z-index: 3;
 }
 
 .video-card-div p {
-  font-size: 0.9rem;
   z-index: 3;
   position: relative;
 }
@@ -353,17 +377,12 @@ header {
   border-bottom-right-radius: 15px;
 }
 
-.schedule-div h1 {
-  font-size: 1.5rem;
+.schedule-div h2 {
   padding-block: 0.5em;
 }
 
 .schedule-div p {
   padding-block-end: 1em;
-}
-
-.schedule-div i {
-  font-size: 0.7rem;
 }
 
 /* Footer */
@@ -379,17 +398,21 @@ footer img {
 }
 
 .upper-footer {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-gap: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
   border-bottom: 0.1px solid;
   padding-block-end: 2em;
   width: 100%;
 }
 
-.upper-footer li,
+.upper-footer a,
 .upper-footer p {
-  font-size: 0.9rem;
+  transition: 0.2s;
+}
+
+.upper-footer a:hover {
+  color: var(--second-color);
 }
 
 .upper-footer ul {
@@ -419,16 +442,22 @@ footer h3 {
   line-height: 1.2rem;
 }
 
-.footer-socials li {
+.footer-socials a {
   background-color: var(--second-color);
   padding: 0.4em;
   border-radius: 10px;
+  transition: 0.2s;
+}
+
+.footer-socials a:hover {
+  background-color: white;
+  color: var(--second-color);
 }
 
 .upper-footer-others {
   display: flex;
   flex-direction: column;
-  gap: 2em;
+  gap: 1em;
 }
 
 /* Media Queries(Responsiveness) */
@@ -441,14 +470,26 @@ footer h3 {
   }
 
   .play-button {
-    height: 5rem;
-    width: 5rem;
-    border-radius: 2.5rem;
+    height: 4rem;
+    width: 4rem;
+    border-radius: 2rem;
     font-size: 1.8rem;
   }
 
   .btn-style {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+  }
+
+  .break {
+    display: inline;
   }
 
   @keyframes nav-list {
@@ -480,14 +521,14 @@ footer h3 {
 
   .phone-number {
     display: inline;
+    background-color: var(--second-color);
+    color: white;
+    padding: 0.5em 1em;
+    border-radius: 25px;
   }
 
   .logo {
     width: 30%;
-  }
-
-  .mobile-nav a {
-    font-size: 1.5rem;
   }
 
   .close-button i {
@@ -498,13 +539,8 @@ footer h3 {
   /* Hero Section */
   .hero-section {
     padding-inline: 5em;
-    padding-block: 14em 5em;
+    padding-block-start: 20em;
     background-image: url("/images/hero-section-image.png");
-  }
-
-  .hero-section a,
-  .hero-section i {
-    font-size: 1.2rem;
   }
 
   .hero-section h1 {
@@ -515,18 +551,6 @@ footer h3 {
   .past-events-section {
     padding-inline: 5em;
     padding-block: 3em;
-  }
-
-  .event-header h2 {
-    font-size: 1.9rem;
-  }
-
-  .video-card-div h3 {
-    font-size: 1.5rem;
-  }
-
-  .video-card-div p {
-    font-size: 1.3rem;
   }
 
   .video-card {
@@ -553,21 +577,8 @@ footer h3 {
     gap: 3rem;
   }
 
-  .nurture-first h3 {
-    font-size: 1.7rem;
-  }
-
-  .nurture-first p {
-    font-size: 1.2rem;
-  }
-
-  .nurture-second h2 {
-    font-size: 2rem;
-  }
-
   .offer {
     justify-content: center;
-    font-size: 1.1rem;
   }
 
   .nurture-second-down {
@@ -586,10 +597,6 @@ footer h3 {
     padding-block: 2em 3em;
   }
 
-  .schedule-div h1 {
-    font-size: 2rem;
-  }
-
   .schedule-div i {
     font-size: 1.1rem;
   }
@@ -603,16 +610,27 @@ footer h3 {
     width: 30%;
   }
 
+  .upper-footer {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .quick-links {
+    grid-column: 2;
+    grid-row: 2;
+  }
+
+  .upper-footer-others {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
   .upper-footer li,
   footer p,
   .upper-footer p,
   .bottom-footer {
-    font-size: 1.4rem;
     line-height: 1.3em;
-  }
-
-  footer h3 {
-    font-size: 1.8rem;
   }
 }
 
@@ -622,10 +640,6 @@ footer h3 {
   /* General */
   .tip {
     font-size: 1.5rem;
-  }
-
-  .btn-style {
-    font-size: 1.2rem;
   }
 
   .hamburger-menu {
@@ -649,13 +663,21 @@ footer h3 {
   nav .nav-list {
     display: flex;
     gap: 1.5rem;
-    font-size: 1.3rem;
   }
 
   .nav-list a {
     display: flex;
     align-items: center;
     gap: 0.2rem;
+    transition: 0.2s;
+  }
+
+  .nav-list a:hover {
+    gap: 0.7rem;
+  }
+
+  .nav-list a:active {
+    color: var(--primary-colour);
   }
 
   .nav-list i {
@@ -665,16 +687,16 @@ footer h3 {
   /* Hero Section */
   .hero-section {
     padding-inline: 7em;
-    padding-block: 19em 6em;
+    padding-block-start: 15em;
+    height: 100vh;
   }
 
-  .hero-section a,
-  .hero-section i {
-    font-size: 1.5rem;
+  .hero-div {
+    width: 50%;
   }
 
   .hero-section h1 {
-    font-size: 4rem;
+    font-size: 3rem;
   }
 
   /* Past event section */
@@ -683,20 +705,8 @@ footer h3 {
     padding-block: 3em;
   }
 
-  .event-header h2 {
-    font-size: 2.5rem;
-  }
-
   .video-card-div {
     grid-template-columns: repeat(2, 1fr);
-  }
-
-  .video-card-div h3 {
-    font-size: 2rem;
-  }
-
-  .video-card-div p {
-    font-size: 1.5rem;
   }
 
   .video-card {
@@ -720,18 +730,6 @@ footer h3 {
     flex: 2;
   }
 
-  .nurture-first h3 {
-    font-size: 2rem;
-  }
-
-  .nurture-first p {
-    font-size: 1.5rem;
-  }
-
-  .nurture-second h2 {
-    font-size: 2.3rem;
-  }
-
   /* Schedule section */
   .schedule-section {
     padding-inline-start: 7em;
@@ -740,32 +738,21 @@ footer h3 {
   .schedule-div {
     width: 55%;
   }
-
-  .schedule-div h1 {
-    font-size: 2.5rem;
-  }
-
-  .schedule-div p {
-    font-size: 1.5rem;
-  }
-
   /* Footer */
   footer {
     padding-inline: 7em;
   }
 
+  .upper-footer img {
+    width: 60%;
+  }
+
   .upper-footer {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 3rem;
+    grid-template-columns: repeat(4, 1fr);
+    flex-wrap: nowrap;
   }
 
-  .upper-footer-others {
-    grid-column: 2;
-    grid-row: 1;
-  }
-
-  .quick-links {
-    grid-row: 2;
-    grid-column: 2;
+  .footer-text {
+    width: 25%;
   }
 }
